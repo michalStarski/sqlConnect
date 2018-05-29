@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Connection App</title>
+
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SQL Connection App</h1>
+    </header>
+    <main id="main">
+        <h2>Login to database</h2>
+        <form class="login">
+            <label for="Source">Source: </label>
+            <select name="source" id="source">
+                <option value="mysql">mySQL</option>
+                <option value="mssql">MSSQL</option>
+                <option value="postgresql">PostgreSQL</option>
+            </select>
+            <label for="hostname">hostname: </label>
+            <input type="text" id="hostname"/>
+            <label for="username">username: </label>
+            <input type="text" id="username"/>
+            <label for="password">password: </label>
+            <input type="password" id="pwd"/>
+            <label for="database">database: </label>
+            <input type="text" id="database"/>
+            <label for="table">table: </label>
+            <input type="text" id="table"/>
+            <button id="loginBtn">Login</button>
+        </form>
+    </main>
+    <footer>
+        <p>Made by <a href="https://github.com/michalStarski">Michal Starski</a></p>
+    </footer>
+    <script src="/dist/js/scripts.js"></script> 
+</body>
+</html>
