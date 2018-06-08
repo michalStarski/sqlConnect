@@ -15,8 +15,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column;
-  height: 93vh; }
+  min-height: 91vh; }
   main h2 {
     padding: 10px;
     color: #e06c75; }
@@ -33,6 +32,13 @@ main {
   .login button {
     margin-top: 20px;
     width: 30%; }
+
+.result {
+  margin: 1rem;
+  border: 2px solid #98c379;
+  overflow: scroll; }
+  .result #output {
+    border-spacing: 1rem; }
 
 footer {
   height: 3vh;

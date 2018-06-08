@@ -29,8 +29,7 @@ main{
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
-    height:93vh;
+    min-height:91vh;
     
     h2{
         padding:10px;
@@ -54,6 +53,16 @@ main{
         margin-top: 20px;
         width:30%;
     }
+}
+
+.result{
+    margin:1rem;
+    border: 2px solid $green;
+    overflow:scroll;
+
+    & #output{
+        border-spacing: 1rem;
+    } 
 }
 
 footer{

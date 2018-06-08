@@ -14,30 +14,38 @@
         <h1>SQL Connection App</h1>
     </header>
     <main id="main">
+    <section>
         <h2>Login to database</h2>
         <form class="login">
             <label for="Source">Source: </label>
             <select name="source" id="source">
-                <option value="mysql">mySQL</option>
-                <option value="mssql">MSSQL</option>
-                <option value="postgresql">PostgreSQL</option>
+                <option name="mysql" value="mysql">mySQL</option>
+                <option name="mssql" value="mssql">MSSQL</option>
             </select>
             <label for="hostname">hostname: </label>
-            <input type="text" id="hostname"/>
+            <input type="text" id="hostname" value="localhost"/>
             <label for="username">username: </label>
-            <input type="text" id="username"/>
+            <input type="text" id="username" value="root"/>
             <label for="password">password: </label>
-            <input type="password" id="pwd"/>
+            <input type="password" id="pwd" value=""/>
             <label for="database">database: </label>
-            <input type="text" id="database"/>
+            <input type="text" id="database" value="mac"/>
             <label for="table">table: </label>
-            <input type="text" id="table"/>
+            <input type="text" id="table" value="mac_default"/>
             <button id="loginBtn">Login</button>
         </form>
+    </section>
+        <section class="result">
+            <table id="output">
+
+            </table>
+        </section>
     </main>
     <footer>
         <p>Made by <a href="https://github.com/michalStarski">Michal Starski</a></p>
     </footer>
     <script src="/dist/js/scripts.js"></script> 
+    <script>
+    </script>
 </body>
 </html>
