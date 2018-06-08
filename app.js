@@ -17,7 +17,7 @@ app.post('/dbaccess/mysql', function(req, res){
     const connection = mysql.createConnection(data.login);
     connection.query(`select * from ${data.table}`, function(err, results, fields){
         if(err){
-            res.status(400).send(err);
+            res.status(err.status).send(err);
             return;
         }
         res.send(results);
@@ -26,16 +26,19 @@ app.post('/dbaccess/mysql', function(req, res){
 
 app.post('/dbaccess/mssql', function(req, res){
     data = req.body;
-    async () => {
-        try {
-            const pool = await msql.connect(`mssql://${data.login.user}:${data.login.password}@${data.login.host}/${data.login.database}`)
-            const result = await msql.query`select * from ${data.table}`
+    mssql.connect(data.login, err => {
+        // ... error checks
+        if(err)
+            res.status(err.status).send(err);
+        // Query
+        new mssql.Request().query(`select * from ${data.table}`, (err, result) => {
+            // ... error checks
+            if(err)
+                throw err;
             res.send(result);
-        } catch (err) {
-            console.log(err);
-            res.status(400).send(err);
-        }
-    }
+        })
+    })
+    mssql.on('error', err => res.status(err.status).send(err))
 });
 
 app.listen(8080, function(){
